@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace FailTracker.Web.Infrastructure.Alerts
+namespace InventoryManagement.Web.Infrastructure.Alerts
 {
 	public static class AlertExtensions
 	{

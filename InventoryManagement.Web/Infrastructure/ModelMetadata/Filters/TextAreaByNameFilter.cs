@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FailTracker.Web.Infrastructure.ModelMetadata.Filters
+namespace InventoryManagement.Web.Infrastructure.ModelMetadata.Filters
 {
 	public class TextAreaByNameFilter : IModelMetadataFilter
 	{

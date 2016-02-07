@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(FailTracker.Web.Startup))]
-namespace FailTracker.Web
+[assembly: OwinStartupAttribute(typeof(InventoryManagement.Web.Startup))]
+namespace InventoryManagement.Web
 {
     public partial class Startup
     {

@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using FailTracker.Web.Domain;
+using InventoryManagement.Web.Domain;
 
-namespace FailTracker.Web.Filters
+namespace InventoryManagement.Web.Filters
 {
 	public class IssueTypeSelectListPopulatorAttribute : ActionFilterAttribute
 	{

@@ -1,20 +1,18 @@
-namespace FailTracker.Web.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using System.Data.Entity.Migrations;
+using InventoryManagement.Web.Data;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<FailTracker.Web.Data.ApplicationDbContext>
+namespace InventoryManagement.Web.Migrations
+{
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
 	        AutomaticMigrationDataLossAllowed = true;
-            ContextKey = "FailTracker.Web.Data.ApplicationDbContext";
+            ContextKey = "InventoryManagement.Web.Data.ApplicationDbContext";
         }
 
-        protected override void Seed(FailTracker.Web.Data.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

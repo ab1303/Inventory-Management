@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace FailTracker.Web
+namespace InventoryManagement.Web
 {
 	public class FilterConfig
 	{

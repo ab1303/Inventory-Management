@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FailTracker.Web.Infrastructure.ModelMetadata
+namespace InventoryManagement.Web.Infrastructure.ModelMetadata
 {
 	public interface IModelMetadataFilter
 	{

@@ -1,9 +1,9 @@
 ﻿using System.Security.Principal;
-using FailTracker.Web.Data;
-using FailTracker.Web.Domain;
+using InventoryManagement.Web.Data;
+using InventoryManagement.Web.Domain;
 using Microsoft.AspNet.Identity;
 
-namespace FailTracker.Web.Infrastructure
+namespace InventoryManagement.Web.Infrastructure
 {
 	public class CurrentUser : ICurrentUser
 	{

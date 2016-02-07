@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace FailTracker.Web.Infrastructure.Mapping
+namespace InventoryManagement.Web.Infrastructure.Mapping
 {
 	public interface IHaveCustomMappings
 	{

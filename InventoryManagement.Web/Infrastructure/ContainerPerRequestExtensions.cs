@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using StructureMap;
 
-namespace FailTracker.Web.Infrastructure
+namespace InventoryManagement.Web.Infrastructure
 {
 	public static class ContainerPerRequestExtensions
 	{

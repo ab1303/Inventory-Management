@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 using StructureMap;
 
-namespace FailTracker.Web.Infrastructure
+namespace InventoryManagement.Web.Infrastructure
 {
 	public class StructureMapDependencyResolver : IDependencyResolver
 	{

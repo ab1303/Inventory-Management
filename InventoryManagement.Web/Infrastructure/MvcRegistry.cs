@@ -4,7 +4,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using StructureMap.Configuration.DSL;
 
-namespace FailTracker.Web.Infrastructure
+namespace InventoryManagement.Web.Infrastructure
 {
 	public class MvcRegistry : Registry
 	{

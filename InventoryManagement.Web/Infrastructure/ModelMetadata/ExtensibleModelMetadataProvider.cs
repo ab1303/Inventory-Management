@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using WebGrease.Css.Extensions;
 
-namespace FailTracker.Web.Infrastructure.ModelMetadata
+namespace InventoryManagement.Web.Infrastructure.ModelMetadata
 {
 	public class ExtensibleModelMetadataProvider
 		: DataAnnotationsModelMetadataProvider

@@ -1,4 +1,4 @@
-﻿namespace FailTracker.Web.Infrastructure.Alerts
+﻿namespace InventoryManagement.Web.Infrastructure.Alerts
 {
 	public class Alert
 	{

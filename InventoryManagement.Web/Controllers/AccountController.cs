@@ -5,17 +5,17 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using FailTracker.Web.Data;
-using FailTracker.Web.Domain;
-using FailTracker.Web.Infrastructure;
+using InventoryManagement.Web.Data;
+using InventoryManagement.Web.Domain;
+using InventoryManagement.Web.Infrastructure;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
-using FailTracker.Web.Models;
+using InventoryManagement.Web.Models;
 
-namespace FailTracker.Web.Controllers
+namespace InventoryManagement.Web.Controllers
 {
-	public class AccountController : FailTrackerController
+	public class AccountController : InventoryManagementController
     {
         public AccountController()
             : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))

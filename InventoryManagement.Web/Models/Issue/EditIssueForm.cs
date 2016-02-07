@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
-using FailTracker.Web.Domain;
-using FailTracker.Web.Filters;
-using FailTracker.Web.Infrastructure.Mapping;
+using InventoryManagement.Web.Domain;
+using InventoryManagement.Web.Filters;
+using InventoryManagement.Web.Infrastructure.Mapping;
 
-namespace FailTracker.Web.Models.Issue
+namespace InventoryManagement.Web.Models.Issue
 {
 	public class EditIssueForm : IMapFrom<Domain.Issue>
 	{

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FailTracker.Web.Models
+namespace InventoryManagement.Web.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

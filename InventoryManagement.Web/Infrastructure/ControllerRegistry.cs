@@ -1,6 +1,6 @@
 ﻿using StructureMap.Configuration.DSL;
 
-namespace FailTracker.Web.Infrastructure
+namespace InventoryManagement.Web.Infrastructure
 {
 	public class ControllerRegistry : Registry
 	{

@@ -1,4 +1,4 @@
-namespace FailTracker.Web.Infrastructure.Tasks
+namespace InventoryManagement.Web.Infrastructure.Tasks
 {
 	public interface IRunAtStartup
 	{

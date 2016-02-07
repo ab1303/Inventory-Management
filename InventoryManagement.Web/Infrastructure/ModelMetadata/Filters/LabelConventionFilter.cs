@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace FailTracker.Web.Infrastructure.ModelMetadata.Filters
+namespace InventoryManagement.Web.Infrastructure.ModelMetadata.Filters
 {
 	public class LabelConventionFilter : IModelMetadataFilter
 	{

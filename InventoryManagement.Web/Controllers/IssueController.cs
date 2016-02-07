@@ -3,17 +3,17 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper.QueryableExtensions;
-using FailTracker.Web.Data;
-using FailTracker.Web.Domain;
-using FailTracker.Web.Filters;
-using FailTracker.Web.Infrastructure;
-using FailTracker.Web.Infrastructure.Alerts;
-using FailTracker.Web.Models.Issue;
+using InventoryManagement.Web.Data;
+using InventoryManagement.Web.Domain;
+using InventoryManagement.Web.Filters;
+using InventoryManagement.Web.Infrastructure;
+using InventoryManagement.Web.Infrastructure.Alerts;
+using InventoryManagement.Web.Models.Issue;
 using Microsoft.Web.Mvc;
 
-namespace FailTracker.Web.Controllers
+namespace InventoryManagement.Web.Controllers
 {
-	public class IssueController : FailTrackerController
+	public class IssueController : InventoryManagementController
 	{
 		private readonly ApplicationDbContext _context;
 		private readonly ICurrentUser _currentUser;

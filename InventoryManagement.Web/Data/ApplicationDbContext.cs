@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
-using FailTracker.Web.Domain;
+using InventoryManagement.Web.Domain;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace FailTracker.Web.Data
+namespace InventoryManagement.Web.Data
 {
 	public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 	{
@@ -12,6 +12,8 @@ namespace FailTracker.Web.Data
 		}
 
 		public DbSet<Issue> Issues { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Carton> Cartons { get; set; }
 		public DbSet<LogAction> Logs { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)

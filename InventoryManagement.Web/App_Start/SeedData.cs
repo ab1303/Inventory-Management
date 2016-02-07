@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using FailTracker.Web.Data;
-using FailTracker.Web.Domain;
-using FailTracker.Web.Infrastructure.Tasks;
+using InventoryManagement.Web.Data;
+using InventoryManagement.Web.Domain;
+using InventoryManagement.Web.Infrastructure.Tasks;
 
-namespace FailTracker.Web
+namespace InventoryManagement.Web
 {
 	public class SeedData : IRunAtStartup
 	{

@@ -3,15 +3,15 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using FailTracker.Web.Data;
-using FailTracker.Web.Infrastructure;
-using FailTracker.Web.Infrastructure.ModelMetadata;
-using FailTracker.Web.Infrastructure.Tasks;
-using FailTracker.Web.Migrations;
+using InventoryManagement.Web.Data;
+using InventoryManagement.Web.Infrastructure;
+using InventoryManagement.Web.Infrastructure.ModelMetadata;
+using InventoryManagement.Web.Infrastructure.Tasks;
+using InventoryManagement.Web.Migrations;
 using StructureMap;
 using StructureMap.TypeRules;
 
-namespace FailTracker.Web
+namespace InventoryManagement.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {

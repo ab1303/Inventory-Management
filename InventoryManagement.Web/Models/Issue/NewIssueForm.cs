@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
-using FailTracker.Web.Domain;
-using FailTracker.Web.Filters;
+using InventoryManagement.Web.Domain;
+using InventoryManagement.Web.Filters;
 
-namespace FailTracker.Web.Models.Issue
+namespace InventoryManagement.Web.Models.Issue
 {
 	public class NewIssueForm
 	{

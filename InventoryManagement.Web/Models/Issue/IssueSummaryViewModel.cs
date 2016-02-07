@@ -1,8 +1,8 @@
 ﻿using System;
-using FailTracker.Web.Domain;
-using FailTracker.Web.Infrastructure.Mapping;
+using InventoryManagement.Web.Domain;
+using InventoryManagement.Web.Infrastructure.Mapping;
 
-namespace FailTracker.Web.Models.Issue
+namespace InventoryManagement.Web.Models.Issue
 {
 	public class IssueSummaryViewModel : IMapFrom<Domain.Issue>
 	{

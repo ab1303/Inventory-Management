@@ -1,9 +1,9 @@
 ﻿using System.Data.Entity;
 using System.Web;
-using FailTracker.Web.Data;
-using FailTracker.Web.Infrastructure.Tasks;
+using InventoryManagement.Web.Data;
+using InventoryManagement.Web.Infrastructure.Tasks;
 
-namespace FailTracker.Web.Infrastructure
+namespace InventoryManagement.Web.Infrastructure
 {
 	public class TransactionPerRequest :
 		IRunOnEachRequest, IRunOnError, IRunAfterEachRequest

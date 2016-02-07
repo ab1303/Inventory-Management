@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using AutoMapper;
-using FailTracker.Web.Infrastructure.Mapping;
-using FailTracker.Web.Infrastructure.Tasks;
+using InventoryManagement.Web.Infrastructure.Mapping;
+using InventoryManagement.Web.Infrastructure.Tasks;
 
-namespace FailTracker.Web
+namespace InventoryManagement.Web
 {
 	public class AutoMapperConfig : IRunAtInit
 	{

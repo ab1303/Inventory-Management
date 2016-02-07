@@ -1,6 +1,6 @@
 ﻿using StructureMap.Configuration.DSL;
 
-namespace FailTracker.Web.Infrastructure.Tasks
+namespace InventoryManagement.Web.Infrastructure.Tasks
 {
 	public class TaskRegistry : Registry
 	{
@@ -9,7 +9,7 @@ namespace FailTracker.Web.Infrastructure.Tasks
 			Scan(scan =>
 			{
 				scan.AssembliesFromApplicationBaseDirectory(
-					a => a.FullName.StartsWith("FailTracker"));
+                    a => a.FullName.StartsWith("InventoryManagement"));
 				scan.AddAllTypesOf<IRunAtInit>();
 				scan.AddAllTypesOf<IRunAtStartup>();
 				scan.AddAllTypesOf<IRunOnEachRequest>();

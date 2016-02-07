@@ -1,6 +1,6 @@
-﻿using FailTracker.Web.Domain;
+﻿using InventoryManagement.Web.Domain;
 
-namespace FailTracker.Web.Infrastructure
+namespace InventoryManagement.Web.Infrastructure
 {
 	public interface ICurrentUser
 	{

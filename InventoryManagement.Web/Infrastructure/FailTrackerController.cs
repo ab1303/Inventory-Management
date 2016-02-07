@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Web.Mvc;
-using FailTracker.Web.Filters;
+using InventoryManagement.Web.Filters;
 using Microsoft.Web.Mvc;
 
-namespace FailTracker.Web.Infrastructure
+namespace InventoryManagement.Web.Infrastructure
 {
 	[IssueTypeSelectListPopulator, 
 	 UserSelectListPopulator]
-	public abstract class FailTrackerController : Controller
+	public abstract class InventoryManagementController : Controller
 	{
 		protected ActionResult RedirectToAction<TController>(Expression<Action<TController>> action)
 			where TController : Controller

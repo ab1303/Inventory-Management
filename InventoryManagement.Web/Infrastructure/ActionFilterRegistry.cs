@@ -4,7 +4,7 @@ using StructureMap;
 using StructureMap.Configuration.DSL;
 using StructureMap.TypeRules;
 
-namespace FailTracker.Web.Infrastructure
+namespace InventoryManagement.Web.Infrastructure
 {
 	public class ActionFilterRegistry : Registry
 	{
@@ -16,7 +16,7 @@ namespace FailTracker.Web.Infrastructure
 			SetAllProperties(x =>
 				x.Matching(p =>
 					p.DeclaringType.CanBeCastTo(typeof(ActionFilterAttribute)) &&
-					p.DeclaringType.Namespace.StartsWith("FailTracker") &&
+                    p.DeclaringType.Namespace.StartsWith("InventoryManagement") &&
 					!p.PropertyType.IsPrimitive &&
 					p.PropertyType != typeof(string)));
 		}

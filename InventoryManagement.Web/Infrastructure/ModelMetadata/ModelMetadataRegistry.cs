@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using StructureMap.Configuration.DSL;
 
-namespace FailTracker.Web.Infrastructure.ModelMetadata
+namespace InventoryManagement.Web.Infrastructure.ModelMetadata
 {
 	public class ModelMetadataRegistry : Registry
 	{

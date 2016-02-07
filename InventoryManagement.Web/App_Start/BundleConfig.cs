@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace FailTracker.Web
+namespace InventoryManagement.Web
 {
     public class BundleConfig
     {

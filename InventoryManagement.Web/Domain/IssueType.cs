@@ -1,4 +1,4 @@
-﻿namespace FailTracker.Web.Domain
+﻿namespace InventoryManagement.Web.Domain
 {
 	public enum IssueType
 	{

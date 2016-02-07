@@ -5,7 +5,7 @@ using StructureMap.Graph;
 using StructureMap.Pipeline;
 using StructureMap.TypeRules;
 
-namespace FailTracker.Web.Infrastructure
+namespace InventoryManagement.Web.Infrastructure
 {
 	public class ControllerConvention : IRegistrationConvention
 	{
