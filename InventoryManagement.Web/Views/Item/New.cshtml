@@ -4,7 +4,7 @@
     ViewBag.Title = "New Item";
 }
 
-<h2>New Issue</h2>
+<h2>New Item</h2>
 @using (Html.BeginForm("New", "Item", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()

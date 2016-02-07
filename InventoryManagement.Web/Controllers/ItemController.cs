@@ -21,7 +21,7 @@ namespace InventoryManagement.Web.Controllers
         // GET: Item
         public ActionResult Index()
         {
-            var models = _context.Items.Where(i => i.ItemId == 1)
+            var models = _context.Items
                 .Project().To<ItemSummaryViewModel>();
             return View(models.ToArray());
         }

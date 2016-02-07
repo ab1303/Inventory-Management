@@ -175,6 +175,7 @@
     <Compile Include="App_Start\SeedData.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IssueController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
@@ -190,6 +191,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BootstrapHelpers.cs" />
+    <Compile Include="Helpers\HtmlHelperExt.cs" />
+    <Compile Include="Helpers\JavaScriptHelper.cs" />
     <Compile Include="Infrastructure\ActionFilterRegistry.cs" />
     <Compile Include="Infrastructure\Alerts\Alert.cs" />
     <Compile Include="Infrastructure\Alerts\AlertDecoratorResult.cs" />
@@ -234,6 +237,8 @@
     <Compile Include="Models\Issue\IssueDetailsViewModel.cs" />
     <Compile Include="Models\Issue\IssueSummaryViewModel.cs" />
     <Compile Include="Models\Issue\NewIssueForm.cs" />
+    <Compile Include="Models\Carton\CartonSummaryViewModel.cs" />
+    <Compile Include="Models\Carton\NewCartonForm.cs" />
     <Compile Include="Models\Item\ItemSummaryViewModel.cs" />
     <Compile Include="Models\Item\NewItemForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -314,6 +319,8 @@
     <Content Include="Views\Shared\EditorTemplates\Object.cshtml" />
     <Content Include="Views\Item\Index.cshtml" />
     <Content Include="Views\Item\New.cshtml" />
+    <None Include="Views\Carton\Index.cshtml" />
+    <None Include="Views\Carton\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
