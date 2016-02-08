@@ -8,5 +8,6 @@ namespace InventoryManagement.Web.Models.Inventory
         public int NumberOfCartons { get; set; }
         public int CartonId { get; set; }
         public IList<SelectListItem> CartonList { get; set; }
+
     }
 }
