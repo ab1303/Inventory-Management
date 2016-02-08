@@ -177,8 +177,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\IssueController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="Domain\Inventory.cs" />
     <Compile Include="Domain\Issue.cs" />
     <Compile Include="Domain\IssueType.cs" />
     <Compile Include="Domain\Carton.cs" />
@@ -228,10 +230,16 @@
     <Compile Include="Migrations\201602070607333_Add_Models.Designer.cs">
       <DependentUpon>201602070607333_Add_Models.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602080934371_Add_Inventory.cs" />
+    <Compile Include="Migrations\201602080934371_Add_Inventory.Designer.cs">
+      <DependentUpon>201602080934371_Add_Inventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Domain\ApplicationUser.cs" />
+    <Compile Include="Models\Inventory\CartonInventory.cs" />
+    <Compile Include="Models\Inventory\ItemInventory.cs" />
     <Compile Include="Models\Issue\AssignmentStatsViewModel.cs" />
     <Compile Include="Models\Issue\EditIssueForm.cs" />
     <Compile Include="Models\Issue\IssueDetailsViewModel.cs" />
@@ -321,6 +329,11 @@
     <Content Include="Views\Item\New.cshtml" />
     <None Include="Views\Carton\Index.cshtml" />
     <None Include="Views\Carton\New.cshtml" />
+    <None Include="Views\Inventory\AddCarton.cshtml" />
+    <None Include="Views\Inventory\AddPiece.cshtml" />
+    <None Include="Views\Inventory\Index.cshtml" />
+    <None Include="Views\Inventory\SellCarton.cshtml" />
+    <None Include="Views\Inventory\SellPiece.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -332,6 +345,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602070607333_Add_Models.resx">
       <DependentUpon>201602070607333_Add_Models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602080934371_Add_Inventory.resx">
+      <DependentUpon>201602080934371_Add_Inventory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

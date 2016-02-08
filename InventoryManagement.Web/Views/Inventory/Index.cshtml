@@ -1,0 +1,18 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Inventory Management</h2>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="#">@Html.ActionLink("Add Piece(s)", "AddPiece", "Inventory")</a></li>
+            <li><a href="#">@Html.ActionLink("Sell Piece(s)", "SellPiece", "Inventory")</a></li>
+            <li><a href="#">@Html.ActionLink("Add Carton(s)", "AddCarton", "Inventory")</a></li>
+            <li><a href="#">@Html.ActionLink("Sell Carton(s)", "SellCarton", "Inventory")</a></li>
+        </ul>
+    </div>
+</nav>

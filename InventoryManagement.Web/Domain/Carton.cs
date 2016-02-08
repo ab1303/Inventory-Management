@@ -10,11 +10,11 @@ namespace InventoryManagement.Web.Domain
 
         public int NumberOfPieces { get; set; }
 
+        public DateTime CreatedAt { get; set; }
+
         public int ItemId { get; set; }
 
-        public Item Item { get; set; }
-
-        public DateTime CreatedAt { get; set; }
+        public virtual Item Item { get; set; }
 
         public Carton()
         {

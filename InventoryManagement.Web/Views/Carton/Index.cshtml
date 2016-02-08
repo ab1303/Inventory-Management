@@ -1,0 +1,34 @@
+﻿@model InventoryManagement.Web.Models.Carton.CartonSummaryViewModel[]
+
+@{
+    ViewBag.Title = "Carton List";
+}
+
+
+<br />
+<div>@Html.ActionLink("Setup Carton", "New", "Carton")</div>
+
+
+<h2>Carton List</h2>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>CartonId</th>
+            <th>ItemName</th>
+            <th>NumberOfPieces</th>
+            <th>Created At</th>
+        </tr>
+    </thead>
+    <tbody class="row-link" data-link="row">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(@item.ItemName, "View", "Issue", routeValues: new { id = @item.CartonId }, htmlAttributes: null)</td>
+                <td>@item.ItemName</td>
+                <td>@item.NumberOfPieces</td>
+                <td>@item.CreatedAt.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
