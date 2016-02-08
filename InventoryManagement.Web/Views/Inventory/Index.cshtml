@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model InventoryManagement.Web.Models.Inventory.InventorySummary
 
 @{
     ViewBag.Title = "title";
@@ -16,3 +16,50 @@
         </ul>
     </div>
 </nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                @Html.BootstrapLabel("ItemList")
+                <div class="col-md-10">
+                    @Html.DropDownListFor(m => m.ItemId, @Model.ItemList, new { @class = "form-control" })
+                    @Html.ValidationMessage("ItemList")
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 col-sm-offset-2">
+            <div class="form-group">
+                <button type="button" class="btn btn-primary">Make Inventory</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        $().ready(function () {
+
+
+
+        });
+
+    </script>
+}
+
