@@ -33,10 +33,18 @@ namespace InventoryManagement.Web.Controllers
 
         public ActionResult New()
         {
+            var alreadySetupInCartonItems = _context.Cartons.Select(c => c.ItemId).ToArray();
+
             var form = new NewCartonForm
             {
+                //ItemList =
+                //    _context.Items.ToListItems(t => (t.ItemCode + " - " + t.ItemName),
+                //        v => v.ItemId.ToString(CultureInfo.InvariantCulture), "Please Select...")
+
+                
+
                 ItemList =
-                    _context.Items.ToListItems(t => (t.ItemCode + " - " + t.ItemName),
+                    _context.Items.Where(i => !alreadySetupInCartonItems.Contains(i.ItemId)).ToListItems(t => (t.ItemCode + " - " + t.ItemName),
                         v => v.ItemId.ToString(CultureInfo.InvariantCulture), "Please Select...")
             };
 

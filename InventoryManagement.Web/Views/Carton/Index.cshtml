@@ -6,6 +6,8 @@
 
 
 <br />
+<br />
+<br />
 <div>@Html.ActionLink("Setup Carton", "New", "Carton")</div>
 
 
@@ -24,7 +26,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@Html.ActionLink(@item.ItemName, "View", "Issue", routeValues: new { id = @item.CartonId }, htmlAttributes: null)</td>
+                <td>@item.CartonId</td>
                 <td>@item.ItemName</td>
                 <td>@item.NumberOfPieces</td>
                 <td>@item.CreatedAt.ToShortDateString()</td>

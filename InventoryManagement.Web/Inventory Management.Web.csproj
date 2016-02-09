@@ -249,11 +249,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\IssueTypes\Enhancement.png" />
-    <Content Include="Content\IssueTypes\Bug.png" />
-    <Content Include="Content\IssueTypes\Readme.txt" />
-    <Content Include="Content\IssueTypes\Support.png" />
-    <Content Include="Content\IssueTypes\Other.png" />
     <Content Include="Content\ubuntu.theme.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -317,6 +312,7 @@
     <None Include="Views\Inventory\Index.cshtml" />
     <None Include="Views\Inventory\SellCarton.cshtml" />
     <None Include="Views\Inventory\SellPiece.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
