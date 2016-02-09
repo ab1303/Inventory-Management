@@ -204,6 +204,7 @@
     <Compile Include="Infrastructure\Mapping\IHaveCustomMappings.cs" />
     <Compile Include="Infrastructure\Mapping\IMapFrom.cs" />
     <Compile Include="Infrastructure\ModelMetadata\ExtensibleModelMetadataProvider.cs" />
+    <Compile Include="Infrastructure\ModelMetadata\Filters\CurrencyTextBoxConventionFilter.cs" />
     <Compile Include="Infrastructure\ModelMetadata\Filters\LabelConventionFilter.cs" />
     <Compile Include="Infrastructure\ModelMetadata\Filters\ReadOnlyTemplateSelectorFilter.cs" />
     <Compile Include="Infrastructure\ModelMetadata\Filters\TextAreaByNameFilter.cs" />
@@ -222,6 +223,8 @@
     <Compile Include="Infrastructure\Tasks\IRunOnError.cs" />
     <Compile Include="Infrastructure\Tasks\TaskRegistry.cs" />
     <Compile Include="Infrastructure\TransactionPerRequest.cs" />
+    <Compile Include="Infrastructure\Validation\MinValueAttribute.cs" />
+    <Compile Include="Infrastructure\Validation\MaxValueAttribute.cs" />
     <Compile Include="Migrations\201602091027005_Database_Baseline.cs" />
     <Compile Include="Migrations\201602091027005_Database_Baseline.Designer.cs">
       <DependentUpon>201602091027005_Database_Baseline.cs</DependentUpon>
@@ -245,6 +248,10 @@
       <Link>AutoMapper.Net4.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Data\InventoryManagement.Web.mdf" />
+    <Content Include="App_Data\InventoryManagement.Web_log.ldf">
+      <DependentUpon>InventoryManagement.Web.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -254,6 +261,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Infrastructure\Clean Database\InventoryManagement.Web.mdf" />
+    <Content Include="Infrastructure\Clean Database\InventoryManagement.Web_log.ldf" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -299,7 +308,6 @@
     <Content Include="Views\Shared\_Alerts.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\IssueType.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\UserID.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ReadOnly.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Object.cshtml" />
@@ -313,10 +321,9 @@
     <None Include="Views\Inventory\SellCarton.cshtml" />
     <None Include="Views\Inventory\SellPiece.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />

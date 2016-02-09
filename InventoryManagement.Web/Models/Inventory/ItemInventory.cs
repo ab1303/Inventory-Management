@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Web.Mvc;
+using InventoryManagement.Web.Infrastructure.Validation;
 
 namespace InventoryManagement.Web.Models.Inventory
 {
     public class ItemInventory
     {
         [Required]
+        [MinValue(1)]
         public int NumberOfPieces { get; set; }
         public int ItemId { get; set; }
 

@@ -1,0 +1,12 @@
+﻿@model decimal
+
+<div class="input-group">
+    <span class="input-group-addon">$</span>
+    <input id="@ViewData.ModelMetadata.PropertyName"
+           class="form-control"
+           data-val="true"
+           data-val-number="The field Price must be a number."
+           data-val-required="The Price field is required." 
+           min=".01" name="Price" step="any" type="number" value="0">
+</div>
+

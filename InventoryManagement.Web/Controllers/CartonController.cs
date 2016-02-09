@@ -41,7 +41,7 @@ namespace InventoryManagement.Web.Controllers
                 //    _context.Items.ToListItems(t => (t.ItemCode + " - " + t.ItemName),
                 //        v => v.ItemId.ToString(CultureInfo.InvariantCulture), "Please Select...")
 
-                
+
 
                 ItemList =
                     _context.Items.Where(i => !alreadySetupInCartonItems.Contains(i.ItemId)).ToListItems(t => (t.ItemCode + " - " + t.ItemName),
@@ -57,14 +57,15 @@ namespace InventoryManagement.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(form);
+                return RedirectToAction<CartonController>(c => c.New())
+                .WithError("Invalid Input!");
             }
 
             _context.Cartons.Add(new Carton
             {
                 ItemId = form.ItemId,
                 NumberOfPieces = form.NumberOfPieces
-                
+
             });
 
             _context.SaveChanges();
