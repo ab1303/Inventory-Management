@@ -4,16 +4,27 @@
     ViewBag.Title = "title";
 }
 
+@section Styles
+{
+    <style type="text/css">
+        .info {
+            background-color: #d9edf7;
+        }
+    </style>
+}
+
 <h2>Inventory Management</h2>
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li><a href="#">@Html.ActionLink("Add Piece(s)", "AddPiece", "Inventory")</a></li>
-            <li><a href="#">@Html.ActionLink("Sell Piece(s)", "SellPiece", "Inventory")</a></li>
-            <li><a href="#">@Html.ActionLink("Add Carton(s)", "AddCarton", "Inventory")</a></li>
-            <li><a href="#">@Html.ActionLink("Sell Carton(s)", "SellCarton", "Inventory")</a></li>
-        </ul>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Add Piece(s)", "AddPiece", "Inventory")</li>
+                <li>@Html.ActionLink("Sell Piece(s)", "SellPiece", "Inventory")</li>
+                <li>@Html.ActionLink("Add Carton(s)", "AddCarton", "Inventory")</li>
+                <li>@Html.ActionLink("Sell Carton(s)", "SellCarton", "Inventory")</li>
+            </ul>
+        </div>
     </div>
 </nav>
 
@@ -31,18 +42,63 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-2 col-sm-offset-2">
+        <div class="col-sm-2 col-sm-offset-4">
             <div class="form-group">
-                <button type="button" class="btn btn-primary">Make Inventory</button>
+                <button type="button" id="makeInventory" class="btn btn-info">Make Inventory</button>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" id="processBlock">
+        <div class="col-sm-6">
+            <fieldset>
+                <legend class="info">
+                    Inventory Details
+                </legend>
+                <dl>
+                    <dt>@Html.BootstrapLabel("ItemName")</dt>
+                    <dd>@Html.TextBoxFor(x => x.ItemName)</dd>
+                </dl>
+                @*<div class="row">
+                        <div class="form-group">
+                            @Html.BootstrapLabel("ItemName")
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(x => x.ItemName)
+                                @Html.ValidationMessage("ItemName")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.BootstrapLabel("NumberOfPieces")
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(x => x.NumberOfPieces)
+                                @Html.ValidationMessage("NumberOfPieces")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.BootstrapLabel("NumberOfCartons")
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(x => x.NumberOfCartons)
+                                @Html.ValidationMessage("NumberOfCartons")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.BootstrapLabel("TotalPieces")
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(x => x.TotalPieces)
+                                @Html.ValidationMessage("TotalPieces")
+                            </div>
+                        </div>
+                    </div>*@
 
+            </fieldset>
 
-
-
+        </div>
     </div>
 </div>
 
@@ -52,11 +108,50 @@
 
 @section Scripts
 {
+    <script src="~/Scripts/jquery.blockUI.js"></script>
+
     <script type="text/javascript">
 
         $().ready(function () {
 
+            $('#makeInventory').on('click', function () {
 
+                var selectedItemId = $('#ItemId').val();
+
+                if (selectedItemId == "") {
+                    alert('please select a valid item');
+                    return;
+                }
+
+                $.ajax({
+                    url: '/Inventory/MakeInventory',
+                    type: "Get",
+                    beforeSend: showBusyMessage,
+                    complete: hideBusyMessage,
+                    data: { itemId: selectedItemId },
+                    dataType: 'json',
+                    success: function (data) {
+
+                        if (data.InvetorySummary !== undefined) {
+                            
+                        } else {
+                            alert(data.Message);
+                        }
+
+                    },
+                    error: function (xhr) {
+                        alert('Network Error Connecting Server');
+                    }
+                });
+            });
+
+            var showBusyMessage = function () {
+                $('#processBlock').block({ message: "<i class=\"ace-icon fa fa-spinner fa-spin orange\"></i> Loading.." });
+            }
+
+            var hideBusyMessage = function () {
+                $('#processBlock').unblock();
+            }
 
         });
 

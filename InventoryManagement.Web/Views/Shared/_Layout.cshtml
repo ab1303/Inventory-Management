@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Inventory Management System</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -24,7 +25,7 @@
                     {
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("New Issue", "New", "Issue")</li>
-                        <li>@Html.ActionLink("Item(s)", "Index", "Piece")</li>
+                        <li>@Html.ActionLink("Item(s)", "Index", "Item")</li>
                         <li>@Html.ActionLink("Carton(s)", "Index", "Carton")</li>
                         <li>@Html.ActionLink("Inventory Mangement", "Index", "Inventory")</li>
                     }
@@ -38,7 +39,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Inventory Management System</p>
         </footer>
     </div>
 

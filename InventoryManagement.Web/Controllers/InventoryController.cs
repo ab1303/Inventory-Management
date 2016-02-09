@@ -33,11 +33,15 @@ namespace InventoryManagement.Web.Controllers
             return View(form);
         }
 
+        [HttpGet]
         public JsonResult MakeInventory(int itemId)
         {
             string message;
             try
             {
+
+                throw new InvalidOperationException();
+
                 var item = _context.Items.SingleOrDefault(i => i.ItemId == itemId);
                 if (item == null)
                 {
@@ -54,7 +58,7 @@ namespace InventoryManagement.Web.Controllers
                                    TotalPieces = -1
                                },
                                Message = message
-                        });
+                          }, JsonRequestBehavior.AllowGet);
                 }
 
 
@@ -97,7 +101,7 @@ namespace InventoryManagement.Web.Controllers
                              TotalPieces = totalPieces
                          },
                         Message = message
-                    });
+                    }, JsonRequestBehavior.AllowGet);
 
 
             }
@@ -107,9 +111,8 @@ namespace InventoryManagement.Web.Controllers
                 return Json(
                          new
                          {
-                             InvetorySummary = new {},
                              Message = message
-                         });
+                         }, JsonRequestBehavior.AllowGet);
             }
         }
 

@@ -5,7 +5,7 @@
 }
 
 <h2>New Item</h2>
-@using (Html.BeginForm("New", "Piece", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("New", "Item", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
