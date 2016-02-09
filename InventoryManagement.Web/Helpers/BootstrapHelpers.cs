@@ -27,5 +27,16 @@ namespace InventoryManagement.Web.Helpers
 				@class = "col-md-2 control-label"
 			});
 		}
+
+        public static IHtmlString BootstrapReadOnlyTextBoxFor<TModel, TProp>(
+                this HtmlHelper<TModel> helper,
+                Expression<Func<TModel, TProp>> property)
+        {
+            return helper.TextBoxFor(property, new
+            {
+                @class = "col-md-4 control-label",
+                disabled = "disabled"
+            });
+        }
 	}
 }

@@ -39,9 +39,6 @@ namespace InventoryManagement.Web.Controllers
             string message;
             try
             {
-
-                throw new InvalidOperationException();
-
                 var item = _context.Items.SingleOrDefault(i => i.ItemId == itemId);
                 if (item == null)
                 {
@@ -80,7 +77,7 @@ namespace InventoryManagement.Web.Controllers
                                  TotalPieces = 0
                              },
                             Message = message
-                        });
+                        }, JsonRequestBehavior.AllowGet);
 
                 }
 

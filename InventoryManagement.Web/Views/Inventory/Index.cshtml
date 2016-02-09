@@ -34,7 +34,7 @@
         <div class="col-sm-6">
             <div class="form-group">
                 @Html.BootstrapLabel("ItemList")
-                <div class="col-md-10">
+                <div>
                     @Html.DropDownListFor(m => m.ItemId, @Model.ItemList, new { @class = "form-control" })
                     @Html.ValidationMessage("ItemList")
                 </div>
@@ -49,52 +49,48 @@
         </div>
     </div>
 
-    <div class="row" id="processBlock">
-        <div class="col-sm-6">
+    <div class="row" id="processBlock" style="visibility: hidden;">
+        <div class="col-md-12">
             <fieldset>
                 <legend class="info">
                     Inventory Details
                 </legend>
-                <dl>
-                    <dt>@Html.BootstrapLabel("ItemName")</dt>
-                    <dd>@Html.TextBoxFor(x => x.ItemName)</dd>
-                </dl>
-                @*<div class="row">
-                        <div class="form-group">
-                            @Html.BootstrapLabel("ItemName")
-                            <div class="col-md-10">
-                                @Html.TextBoxFor(x => x.ItemName)
-                                @Html.ValidationMessage("ItemName")
-                            </div>
+                <div class="row">
+                    <div class="form-group">
+                        @Html.BootstrapLabel("ItemName")
+                        <div>
+                            @Html.BootstrapReadOnlyTextBoxFor(x => x.ItemName)
+                            @Html.ValidationMessage("ItemName")
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="form-group">
-                            @Html.BootstrapLabel("NumberOfPieces")
-                            <div class="col-md-10">
-                                @Html.TextBoxFor(x => x.NumberOfPieces)
-                                @Html.ValidationMessage("NumberOfPieces")
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        @Html.BootstrapLabel("NumberOfPieces")
+                        <div>
+                            @Html.BootstrapReadOnlyTextBoxFor(x => x.NumberOfPieces)
+                            @Html.ValidationMessage("NumberOfPieces")
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="form-group">
-                            @Html.BootstrapLabel("NumberOfCartons")
-                            <div class="col-md-10">
-                                @Html.TextBoxFor(x => x.NumberOfCartons)
-                                @Html.ValidationMessage("NumberOfCartons")
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        @Html.BootstrapLabel("NumberOfCartons")
+                        <div>
+                            @Html.BootstrapReadOnlyTextBoxFor(x => x.NumberOfCartons)
+                            @Html.ValidationMessage("NumberOfCartons")
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="form-group">
-                            @Html.BootstrapLabel("TotalPieces")
-                            <div class="col-md-10">
-                                @Html.TextBoxFor(x => x.TotalPieces)
-                                @Html.ValidationMessage("TotalPieces")
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        @Html.BootstrapLabel("TotalPieces")
+                        <div>
+                            @Html.BootstrapReadOnlyTextBoxFor(x => x.TotalPieces)
+                            @Html.ValidationMessage("TotalPieces")
                         </div>
-                    </div>*@
+                    </div>
+                </div>
 
             </fieldset>
 
@@ -114,26 +110,46 @@
 
         $().ready(function () {
 
+            var showBusyMessage = function () {
+                $('#processBlock').block({ message: "<i class=\"ace-icon fa fa-spinner fa-spin orange\"></i> Loading.." });
+            }
+
+            var hideBusyMessage = function () {
+                $('#processBlock').unblock();
+            }
+
+            $('#ItemId').on('change', function() {
+                $('#processBlock').css({ 'visibility': 'hidden' });
+            });
+
             $('#makeInventory').on('click', function () {
 
                 var selectedItemId = $('#ItemId').val();
 
-                if (selectedItemId == "") {
+                if (selectedItemId === "") {
                     alert('please select a valid item');
                     return;
                 }
 
+                $('#processBlock').css({ 'visibility': 'visible' });
+
                 $.ajax({
-                    url: '/Inventory/MakeInventory',
-                    type: "Get",
+                    url: "@Url.Action("MakeInventory", "Inventory")",
+                    type: "GET",
                     beforeSend: showBusyMessage,
                     complete: hideBusyMessage,
                     data: { itemId: selectedItemId },
                     dataType: 'json',
+                    async: false,
                     success: function (data) {
 
                         if (data.InvetorySummary !== undefined) {
-                            
+                            // Setup Values
+                            $('#@Html.IdFor(x => x.ItemName)').val(data.InvetorySummary.ItemName);
+                            $('#@Html.IdFor(x => x.NumberOfPieces)').val(data.InvetorySummary.NumberOfPieces);
+                            $('#@Html.IdFor(x => x.NumberOfCartons)').val(data.InvetorySummary.NumberOfCartons);
+                            $('#@Html.IdFor(x => x.TotalPieces)').val(data.InvetorySummary.TotalPieces);
+
                         } else {
                             alert(data.Message);
                         }
@@ -145,13 +161,7 @@
                 });
             });
 
-            var showBusyMessage = function () {
-                $('#processBlock').block({ message: "<i class=\"ace-icon fa fa-spinner fa-spin orange\"></i> Loading.." });
-            }
 
-            var hideBusyMessage = function () {
-                $('#processBlock').unblock();
-            }
 
 
             function $alertAjaxError(jqXhr, status, logMsg) {
