@@ -6,8 +6,7 @@ using Microsoft.Web.Mvc;
 
 namespace InventoryManagement.Web.Infrastructure
 {
-	[IssueTypeSelectListPopulator, 
-	 UserSelectListPopulator]
+	[UserSelectListPopulator]
 	public abstract class InventoryManagementController : Controller
 	{
 		protected ActionResult RedirectToAction<TController>(Expression<Action<TController>> action)

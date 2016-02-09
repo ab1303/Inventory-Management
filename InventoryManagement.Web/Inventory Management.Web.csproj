@@ -178,15 +178,11 @@
     <Compile Include="Controllers\CartonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
-    <Compile Include="Controllers\IssueController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Domain\Inventory.cs" />
-    <Compile Include="Domain\Issue.cs" />
-    <Compile Include="Domain\IssueType.cs" />
     <Compile Include="Domain\Carton.cs" />
     <Compile Include="Domain\LogAction.cs" />
     <Compile Include="Domain\Item.cs" />
-    <Compile Include="Filters\IssueTypeSelectListPopulatorAttribute.cs" />
     <Compile Include="Filters\LogAttribute.cs" />
     <Compile Include="Filters\UserSelectListPopulatorAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -226,13 +222,9 @@
     <Compile Include="Infrastructure\Tasks\IRunOnError.cs" />
     <Compile Include="Infrastructure\Tasks\TaskRegistry.cs" />
     <Compile Include="Infrastructure\TransactionPerRequest.cs" />
-    <Compile Include="Migrations\201602070607333_Add_Models.cs" />
-    <Compile Include="Migrations\201602070607333_Add_Models.Designer.cs">
-      <DependentUpon>201602070607333_Add_Models.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602080934371_Add_Inventory.cs" />
-    <Compile Include="Migrations\201602080934371_Add_Inventory.Designer.cs">
-      <DependentUpon>201602080934371_Add_Inventory.cs</DependentUpon>
+    <Compile Include="Migrations\201602091027005_Database_Baseline.cs" />
+    <Compile Include="Migrations\201602091027005_Database_Baseline.Designer.cs">
+      <DependentUpon>201602091027005_Database_Baseline.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -241,11 +233,6 @@
     <Compile Include="Models\Inventory\CartonInventory.cs" />
     <Compile Include="Models\Inventory\InventorySummary.cs" />
     <Compile Include="Models\Inventory\ItemInventory.cs" />
-    <Compile Include="Models\Issue\AssignmentStatsViewModel.cs" />
-    <Compile Include="Models\Issue\EditIssueForm.cs" />
-    <Compile Include="Models\Issue\IssueDetailsViewModel.cs" />
-    <Compile Include="Models\Issue\IssueSummaryViewModel.cs" />
-    <Compile Include="Models\Issue\NewIssueForm.cs" />
     <Compile Include="Models\Carton\CartonSummaryViewModel.cs" />
     <Compile Include="Models\Carton\NewCartonForm.cs" />
     <Compile Include="Models\Item\ItemSummaryViewModel.cs" />
@@ -314,12 +301,6 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Issue\New.cshtml" />
-    <Content Include="Views\Issue\YourIssuesWidget.cshtml" />
-    <Content Include="Views\Issue\View.cshtml" />
-    <Content Include="Views\Issue\CreatedByYouWidget.cshtml" />
-    <Content Include="Views\Issue\Edit.cshtml" />
-    <Content Include="Views\Issue\AssignmentStatsWidget.cshtml" />
     <Content Include="Views\Shared\_Alerts.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\MultilineText.cshtml" />
@@ -345,11 +326,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602070607333_Add_Models.resx">
-      <DependentUpon>201602070607333_Add_Models.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602080934371_Add_Inventory.resx">
-      <DependentUpon>201602080934371_Add_Inventory.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602091027005_Database_Baseline.resx">
+      <DependentUpon>201602091027005_Database_Baseline.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

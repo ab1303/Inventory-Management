@@ -9,20 +9,13 @@ namespace InventoryManagement.Web.Data
 		public ApplicationDbContext()
 			: base("DefaultConnection")
 		{
+            //Create database always, even If exists
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
 		}
 
-		public DbSet<Issue> Issues { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Carton> Cartons { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
 		public DbSet<LogAction> Logs { get; set; }
-
-		protected override void OnModelCreating(DbModelBuilder modelBuilder)
-		{
-			modelBuilder.Entity<ApplicationUser>()
-				.HasMany(u => u.Assignments).WithRequired(i => i.AssignedTo);
-			
-			base.OnModelCreating(modelBuilder);
-		}
 	}
 }

@@ -7,13 +7,13 @@ namespace InventoryManagement.Web.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class Add_Inventory : IMigrationMetadata
+    public sealed partial class Database_Baseline : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Add_Inventory));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Database_Baseline));
         
         string IMigrationMetadata.Id
         {
-            get { return "201602080934371_Add_Inventory"; }
+            get { return "201602091027005_Database_Baseline"; }
         }
         
         string IMigrationMetadata.Source
